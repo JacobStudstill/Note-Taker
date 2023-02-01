@@ -1,8 +1,18 @@
 # Note Taker
 
+## Table of Contents
+[Motivation](#Motivation)
+[Demonstration](#Demonstration)
+[Languages](#Languages)
+[Usage](#Usage)
+[Link](#Link)
+
+
+
 ## Motivation
 
 My motivation for this project was to create an application that will allow a user to view, add, and delete notes. This can be used for users to keep up with tasks they are working on, still plan on completing, and deleting when they are finished.
+
 ## Demonstration
 
 
