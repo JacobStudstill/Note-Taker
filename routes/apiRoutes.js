@@ -1,3 +1,4 @@
+//Required libraries
 const router = require('express').Router()
 const db = require('../db/db.json')
 const fs = require('fs')
@@ -9,6 +10,7 @@ router.get('/notes', (req, res) => {
     return err ? console.log(err) : res.json(JSON.parse(data))})
 });
 
+//Post to JSON
 router.post('/notes', (req, res) => {
   console.log(req.body);
 
@@ -23,6 +25,7 @@ router.post('/notes', (req, res) => {
 
     res.json(newNote)
 
+    //READ the json file
     fs.readFile('db/db.json','utf-8', (err,data) => {
       if (err) {
         console.error(err);
@@ -32,6 +35,7 @@ router.post('/notes', (req, res) => {
 
         parsedReviews.push(newNote);
 
+        //Write to JSON file
         fs.writeFile(
           'db/db.json',
           JSON.stringify(parsedReviews, null, 4),
@@ -47,6 +51,7 @@ router.post('/notes', (req, res) => {
   } 
 });
 
+//Delete from JSON 
 router.delete('/notes/:id', (req, res) => {
   let deleteid = req.params.id;
   fs.readFile('db/db.json', 'utf8', (err, data) => {
