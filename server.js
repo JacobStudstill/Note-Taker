@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const apiRoutes = require('./routes/apiRoutes')
-// const api = require('./routes/index.js');
+const fs = require('fs')
 
 const PORT = 3001;
 
@@ -18,7 +18,6 @@ app.use('/api', apiRoutes)
 app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
-
 
 
 //Kepp this at the button because it is the index which goes last
