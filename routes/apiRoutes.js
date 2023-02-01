@@ -35,7 +35,7 @@ router.post('/notes', (req, res) => {
           (writeErr) =>
             writeErr
               ? console.error(writeErr)
-              : console.info('Successfully updated reviews!')
+              : console.info('Successfully updated Notes!')
         );
       }
     });
