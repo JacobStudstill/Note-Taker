@@ -1,15 +1,15 @@
 # Note Taker
 
 ## Table of Contents
-[Motivation](#Motivation)
+* [Motivation](#Motivation)
 
-[Demonstration](#Demonstration)
+* [Demonstration](#Demonstration)
 
-[Languages](#Languages)
+* [Languages](#Languages)
 
-[Usage](#Usage)
+* [Usage](#Usage)
 
-[Link](#Link)
+* [Link](#Link)
 
 
 
