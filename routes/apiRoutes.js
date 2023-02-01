@@ -18,7 +18,10 @@ router.post('/notes', (req, res) => {
     const newNote = {
       title,
       text,
+      id: uuidv4()
     };
+
+    res.json(newNote)
 
     fs.readFile('db/db.json','utf-8', (err,data) => {
       if (err) {
@@ -36,11 +39,37 @@ router.post('/notes', (req, res) => {
             writeErr
               ? console.error(writeErr)
               : console.info('Successfully updated Notes!')
+              
         );
       }
     });
     
   } 
+});
+
+router.delete('/notes/:id', (req, res) => {
+  let deleteid = req.params.id;
+  fs.readFile('db/db.json', 'utf8', (err, data) => {
+      if (err) {
+          console.log(err);
+      }
+      let noteData = JSON.parse(data);
+      for(let i = 0; i < noteData.length; i++) {
+          if (deleteid == noteData[i].id) {
+              noteData.splice(i, 1);
+              fs.writeFile('db/db.json', JSON.stringify(noteData, null, 4), (err) => {
+                  if (err) {
+                      console.log(err);
+                  } else {
+                       console.log('The note is gone!');
+                  }
+              });
+          };
+      };
+  });
+
+  res.end();
+
 });
 
 module.exports = router
